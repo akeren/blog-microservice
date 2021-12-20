@@ -1,6 +1,6 @@
 # Vanilla blog microservice
 
-This is a vanilla blog **microservice** built using [node.js](https://nodejs.org/en/); it was created for the purpose of learning to gain an understanding of how microservices communicate behind the scenes. In an attempt to gain a deeper understanding comes the project. The communication style adopted is *Async** where services communicate with each other using events via an event bus. 
+This is a vanilla blog **microservice** built using [node.js](https://nodejs.org/en/); it was created for the purpose of learning to gain an understanding of how microservices communicate behind the scenes. In an attempt to gain a deeper understanding comes the project. The communication style adopted is **Async** where services communicate with each other using events via an event bus. 
 
 ## Services
     - Posts service 
