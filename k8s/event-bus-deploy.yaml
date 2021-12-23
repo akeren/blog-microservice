@@ -14,7 +14,7 @@ spec:
     spec:
      containers:
       - name: event-bus
-        image: docker.io/blog/event-bus
+        image: akeren/event-bus 
 ---
 apiVersion: v1
 kind: Service

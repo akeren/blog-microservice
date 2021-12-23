@@ -14,7 +14,7 @@ spec:
     spec:
      containers:
       - name: moderation
-        image: docker.io/blog/moderation 
+        image: akeren/moderation 
 ---
 apiVersion: v1
 kind: Service

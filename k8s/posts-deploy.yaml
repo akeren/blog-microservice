@@ -14,7 +14,7 @@ spec:
     spec:
      containers:
       - name: posts
-        image: docker.io/blog/post
+        image: akeren/posts
 ---
 apiVersion: v1
 kind: Service
