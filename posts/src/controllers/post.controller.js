@@ -17,16 +17,16 @@ exports.store = async (req, res) => {
 	const id = uuid();
 
 	if (!title) {
-		res.status(400).json({
+		res.status(422).json({
 			status: false,
-			code: 400,
+			code: 422,
 			message: 'Title is required'
 		});
 	}
 
 	const post = { id, title };
 
-	await axios.post('http://localhost:4005/api/v1/events', {
+	await axios.post('http://event-bus-service:4005/api/v1/events', {
 		type: 'PostCreated',
 		data: post
 	});
