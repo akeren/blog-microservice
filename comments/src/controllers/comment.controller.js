@@ -23,9 +23,9 @@ exports.store = async (req, res) => {
 	const { content } = req.body;
 
 	if (!content) {
-		res.status(400).json({
+		res.status(422).json({
 			status: false,
-			code: 400,
+			code: 422,
 			message: 'Content is required'
 		});
 	}
@@ -39,7 +39,7 @@ exports.store = async (req, res) => {
 
 	comments.push(comment);
 
-	await axios.post('http://localhost:4005/api/v1/events', {
+	await axios.post('http://event-bus-service:4005/api/v1/events', {
 		type: 'CommentCreated',
 		data: comment
 	});
@@ -53,7 +53,7 @@ exports.store = async (req, res) => {
 		const findComment = commentsData.find((comment) => comment.id === id);
 		findComment.status = status;
 
-		await axios.post('http://localhost:4005/api/v1/events', {
+		await axios.post('http://event-bus-service:4005/api/v1/events', {
 			type: 'CommentUpdated',
 			data: {
 				id,
