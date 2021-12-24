@@ -1,32 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: event-bus-deploy
+  name: moderation-deploy
 spec:
   replicas: 1
   selector:
    matchLabels:
-    app: event-bus
+    app: moderation
   template:
     metadata:
      labels:
-      app: event-bus
+      app: moderation
     spec:
      containers:
-      - name: event-bus
-        image: akeren/event-bus 
+      - name: moderation
+        image: akeren/moderation 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: event-bus-service
+  name: moderation-service
 spec:
   selector:
-    app: event-bus
+    app: moderation
   ports:
-    - name: event-bus
+    - name: moderation
       protocol: TCP
-      port: 4005
-      targetPort: 4005
-
-
+      port: 4003
+      targetPort: 4003
